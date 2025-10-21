@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import '../css/Home.css'
 import { searchMovies } from "../services/api";
 import { getPopularMovies } from "../services/api"
-import { set } from "date-fns/fp";
+// safer way for Vite deployment:
+import set from 'date-fns/fp/set/index.js';
+
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
     const [movies, setMovies] = useState([]);
